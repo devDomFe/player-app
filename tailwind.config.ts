@@ -13,6 +13,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        russoOne: ["var(--font-russo-one)", "sans-serif"],
+        hankenGrotesk: ["var(--font-hanken-grotesk)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        paytoneOne: ["var(--font-paytone-one)", "sans-serif"],
+      },
     },
   },
   plugins: [],
