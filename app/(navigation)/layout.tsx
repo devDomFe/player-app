@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-screen border-2 border-red-600 ${paytoneOne.variable} ${montserrat.variable} ${hankenGrotesk.variable} ${russoOne.variable} ${poppins.variable}`}
+        className={`h-screen flex flex-col items-center ${paytoneOne.variable} ${montserrat.variable} ${hankenGrotesk.variable} ${russoOne.variable} ${poppins.variable}`}
       >
         {/* <Navigation /> */}
         {/* <div className="outlet-container flex-1">{children}</div> */}

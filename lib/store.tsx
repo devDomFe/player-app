@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import modalReducer from "../lib/Slice/ModalSlice";
+import playerListReducer from "../lib/Slice/Players.slice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      // modal: modalReducer,
+      playerList: playerListReducer,
     },
   });
 };
