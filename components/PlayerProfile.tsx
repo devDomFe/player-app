@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import CircularProgress from "@mui/material/CircularProgress";
+import Skeleton from "@mui/material/Skeleton";
 
 //asset
 import fallbackImageUrl from "../public/lockedPlayers.png";
@@ -20,9 +20,22 @@ export const PlayerProfile: React.FC<PlayerProfileProps> = ({ personId }) => {
   return (
     <>
       {isLoading ? (
-        <div className="flex items-center justify-center">
-          <CircularProgress />
-        </div>
+        <>
+          <div className="justify-between hidden lg:flex">
+            <div className=" flex flex-col w-[40%] gap-2">
+              <Skeleton variant="rounded" width={"100%"} height={80} />
+              <Skeleton variant="rounded" width={"100%"} height={200} />
+            </div>
+            <Skeleton variant="circular" width={400} height={400} />
+          </div>
+          <div className="flex-col-reverse justify-center items-center gap-2 flex lg:hidden">
+            <div className=" flex flex-col justify-center items-center w-full gap-2">
+              <Skeleton variant="rounded" width={"80%"} height={80} />
+              <Skeleton variant="rounded" width={"80%"} height={150} />
+            </div>
+            <Skeleton variant="circular" width={200} height={200} />
+          </div>
+        </>
       ) : isError ? (
         <div className="flex items-center justify-center">
           <p className="font-poppins font-bold text-2xl">

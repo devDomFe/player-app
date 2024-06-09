@@ -2,8 +2,8 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import CircularProgress from "@mui/material/CircularProgress";
 import { useRouter } from "next/navigation";
+import Skeleton from "@mui/material/Skeleton";
 
 //redux
 import { useGetListOfQuery } from "@/lib/Slice/PlayerApi";
@@ -37,8 +37,13 @@ export const PlayerList = () => {
   return (
     <div className="player-list-component p-2 grid grid-cols-1 divide-y-[1px] divide-inherit border-[1px] border-gray-400 rounded-md h-[32rem] overflow-y-auto">
       {isLoading ? (
-        <div className="flex items-center justify-center">
-          <CircularProgress />
+        <div className="flex flex-col justify-between">
+          {Array.from({ length: 5 }, (v, i) => i).map((item) => (
+            <div className="flex justify-between items-center" key={item}>
+              <Skeleton variant="rounded" width={"30%"} height={30} />
+              <Skeleton variant="circular" width={80} height={80} />
+            </div>
+          ))}
         </div>
       ) : isError ? (
         <div className="flex items-center justify-center">
