@@ -53,22 +53,24 @@ export const PlayerList = () => {
             key={index}
             onClick={() => router.push(`/players/${item.personId}`)}
           >
-            <div className="flex flex-col gap-2 player-details">
-              <div className="flex gap-2 player-name">
-                <p className="text-lg font-semibold font-montserrat">
+            <div className="flex flex-col  player-details">
+              <div className="flex flex-col lg:flex-row items-start gap-2">
+                <p className="text-xs lg:text-lg font-semibold font-montserrat">
                   {item.nameFullLocal}
                 </p>
-                <p className="text-lg text-gray-600 font-montserrat">
-                  {item.nationality}
-                </p>
-                <div
-                  className={`flex items-center justify-center px-2 rounded-md ${getStatusColor(
-                    item.status
-                  )}`}
-                >
-                  <p className="text-xs font-semibold text-white font-montserrat">
-                    {item.status}
+                <div className="flex flex-col justify-center lg:flex-row lg:gap-2">
+                  <p className="text-sm lg:text-lg text-gray-600 font-montserrat">
+                    {item.nationality}
                   </p>
+                  <div
+                    className={`flex items-center justify-center px-2 rounded-md ${getStatusColor(
+                      item.status
+                    )}`}
+                  >
+                    <p className="text-[.6rem] lg:text-xs font-semibold text-white font-montserrat">
+                      {item.status}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

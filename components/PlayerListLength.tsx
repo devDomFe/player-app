@@ -9,7 +9,7 @@ export const PlayerListLength = () => {
   const { data, isLoading, isSuccess, isError, error } =
     useGetListOfQuery("persons");
   return (
-    <p className="text-sm italic text-gray-300 font-poppins">
+    <p className="text-xs lg:text-sm italic text-gray-300 font-poppins">
       <span>{isSuccess && data && data.data ? data.data.length : 0}</span>{" "}
       results
     </p>

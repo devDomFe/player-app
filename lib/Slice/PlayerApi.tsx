@@ -10,7 +10,10 @@ export const PlayerApi = createApi({
     getListOf: builder.query<PlayerResponse, string>({
       query: (category) => `?format=true&route=${category}`,
     }),
+    getPlayer: builder.query<PlayerResponse, string>({
+      query: (personId) => `?format=true&route=persons/${personId}`,
+    }),
   }),
 });
 
-export const { useGetListOfQuery } = PlayerApi;
+export const { useGetListOfQuery, useGetPlayerQuery } = PlayerApi;

@@ -9,7 +9,7 @@ const fetchPlayersList = async () => {
     return response.data;
   } catch (error) {
     console.error("Error fetching players list:", error);
-    throw error; // rethrow the error to let the caller handle it
+    throw error;
   }
 };
 
